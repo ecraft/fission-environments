@@ -1,7 +1,7 @@
 ARG BUILDER_IMAGE=fission/builder:latest
 FROM ${BUILDER_IMAGE}
 
-FROM ruby:2.6.1-alpine3.9
+FROM ruby:3.2.2-alpine3.18
 COPY --from=0 /builder /builder
 
 RUN apk update
