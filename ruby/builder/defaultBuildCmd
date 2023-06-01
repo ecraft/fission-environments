@@ -3,7 +3,8 @@ set -euxo pipefail
 
 if [ -f ${SRC_PKG}/Gemfile.lock ]
 then 
-	cd $SRC_PKG
-	bundle install --deployment
+  cd $SRC_PKG
+  bundle config set --local deployment 'true'
+  bundle install
 fi
 cp -r ${SRC_PKG} ${DEPLOY_PKG}
